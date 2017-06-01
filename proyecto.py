@@ -26,6 +26,8 @@ t3 = 0
 t4 = 0
 t5 = 0
 t6 = 0
+t7 = 0
+t8 = 0
 count = 0
 count2 = 0
 count3 = 500
@@ -375,7 +377,7 @@ def fightercar2():
 
         
 def start2():
-    global fondolvl2,i,j,carro,key2,nivel2,carro2,posx1,posy1,posx2,posy2,z,movimientofondo2,lvl3,carrito2,mapa2,player1,player2,fighter2,fighterr2,runner3,runner4,gas3,gas4,carro20
+    global fondolvl2,i,j,carro,key2,nivel2,carro2,posx1,posy1,posx2,posy2,z,movimientofondo2,lvl3,carrito2,mapa2,player1,player2,fighter2,fighterr2,runner3,runner4,gas3,gas4,carro20,lvl3
     lvl3 = tkinter.Toplevel(v)
     v.iconify()
     nivel2= tkinter.Canvas(lvl3,bg="blue", width=1920, height=1000 )
@@ -712,7 +714,6 @@ def fightercar5():
         if(nivel3.coords(fighter3)[0] == nivel3.coords(carro3)[0]):
             nivel3.move(fighter3,0,vely2)
     if(nivel3.coords(fighter3)[1] > 1400):
-        nivel3.delete(fighter3)
         gg3 = random.randint(270,600)
         fighter3 = nivel3.create_image(gg3,1,image=carro30)
 
@@ -727,7 +728,6 @@ def fightercar6():
         if(nivel3.coords(fighterr3)[0] == nivel3.coords(carrito3)[0]):
             nivel3.move(fighterr3,0,vely2)
     if(nivel3.coords(fighterr3)[1] > 1400):
-        nivel3.delete(fighterr3)
         ff3 = random.randint(900,1250)
         fighterr3 = nivel3.create_image(ff3,1,image=carro30)
 
@@ -912,7 +912,7 @@ def key2player3():
     lvl4.after(30,key2player3)
 #Nivel4
 def start4():
-    global fondolvl4,i,j,carro,key4,nivel4,carro4,posx1,posy1,posx2,posy2,z,movimientofondo4,lvl5,carrito4,mapa4,player1,player2
+    global fondolvl4,i,j,carro,key4,nivel4,carro4,posx1,posy1,posx2,posy2,z,movimientofondo4,lvl5,carrito4,mapa4,player1,player2,runner7,runner8,gas7,gas8,fighter4,fighterr4
     lvl5 = tkinter.Toplevel(v)
     v.iconify()
     nivel4= tkinter.Canvas(lvl5,bg="blue", width=1920, height=1000 )
@@ -929,13 +929,24 @@ def start4():
     gasolin=tkinter.Label(nivel4,bg="white",fg="black",text="Gasolina",borderwidth=5,font=("Arial",23)).place(x=1400,y=570)
     velo=tkinter.Label(nivel4,bg="white",fg="black",text="Velocidad",borderwidth=5,font=("Arial",23)).place(x=20,y=200)
     velo=tkinter.Label(nivel4,bg="white",fg="black",text="Velocidad",borderwidth=5,font=("Arial",23)).place(x=1400,y=200)
+    fighter4 = nivel4.create_image(380,0,image=carro30)
+    fighterr4 = nivel4.create_image(980,0,image=carro30)
+
     carro4=nivel4.create_image(450,750,image=carro)
     mapa4=nivel4.create_image(770,380,image=fondolvl2)
     carrito4=nivel4.create_image(1100,750,image=carro)
+    runner7 = nivel4.create_image(320,0,image=carro20)
+    runner8 = nivel4.create_image(990,0,image=carro20)
+    gas7 = nivel4.create_image(450,-800,image=gasolina)
+    gas8 = nivel4.create_image(1100,-800,image=gasolina)
     gaso7()
     gaso8()
     puntos7()
     puntos8()
+    movimiento7()
+    movimiento8()
+    fightercar7()
+    fightercar8()
     velocidad7()
     velocidad8()
     key1player4()
@@ -943,6 +954,66 @@ def start4():
     movimientofondo4()
     nivel4.lower(mapa4)
 
+velrun2=2
+def movimiento7():
+
+    global lvl5,carro20,t7,runner8,posx1,posy1,posx2,posy2,start,z,start,t8,runner7,velrun2
+    if(t7<500):
+        t7=t7+1
+        nivel4.move(runner7,0,velrun2)
+        nivel4.move(runner8,0,velrun2)
+    if(t7==500):
+        pp4 = random.randint(270,600)
+        pp12 = random.randint(900,1250)
+        nivel4.move(runner7,pp4-nivel4.coords(runner7)[0],-nivel4.coords(runner7)[1])
+        nivel4.move(runner8,pp12-nivel4.coords(runner8)[0],-nivel4.coords(runner8)[1])
+
+        t7 = 0
+    nivel4.after(10,movimiento7)
+def movimiento8():
+
+    global lvl5,carro1,t7,carro2,gas8,posx1,posy1,posx2,posy2,start,z,start,t8,gas7,velgas
+    if(t8<2000):
+        t8=t8+1
+        nivel4.move(gas7,0,velgas)
+        nivel4.move(gas8,0,velgas)
+    if(t8==2000):
+        tt4 = random.randint(270,600)
+        tt12 = random.randint(900,1250)
+        nivel4.move(gas7,tt3-nivel3.coords(gas7)[0],-nivel4.coords(gas7)[1])
+        nivel4.move(gas8,tt12-nivel4.coords(gas7)[0],-nivel4.coords(gas8)[1])
+        
+        t8 = 0
+    nivel4.after(10,movimiento8)
+vely2=4
+def fightercar7():
+    global lvl4,carro1,t,carro4,runner,posx1,posy1,posx2,posy2,start,z,start,t1,runner2,velrun,fighter4,nivel4,vely2
+    if(nivel4.coords(fighter4)[1] <=1400):
+        if(nivel4.coords(fighter4)[0] < nivel4.coords(carro4)[0]):
+            nivel4.move(fighter4,1,vely2)
+        if(nivel4.coords(fighter4)[0] > nivel4.coords(carro4)[0]):
+            nivel4.move(fighter4,-1,vely2)
+        if(nivel4.coords(fighter4)[0] == nivel4.coords(carro4)[0]):
+            nivel4.move(fighter4,0,vely2)
+    if(nivel4.coords(fighter4)[1] > 1400):
+        gg4 = random.randint(270,600)
+        fighter4 = nivel4.create_image(gg4,1,image=carro30)
+
+    nivel4.after(10,fightercar7)
+def fightercar8():
+    global lvl4,carro1,t,carrito4,runner,posx1,posy1,posx2,posy2,start,z,start,t1,runner2,velrun,fighterr4,nivel4,vely2
+    if(nivel4.coords(fighterr4)[1] <=1400):
+        if(nivel4.coords(fighterr4)[0] < nivel4.coords(carrito4)[0]):
+            nivel4.move(fighterr4,1,vely2)
+        if(nivel4.coords(fighterr4)[0] > nivel4.coords(carrito4)[0]):
+            nivel4.move(fighterr4,-1,vely2)
+        if(nivel4.coords(fighterr4)[0] == nivel4.coords(carrito4)[0]):
+            nivel4.move(fighterr4,0,vely2)
+    if(nivel4.coords(fighterr4)[1] > 1400):
+        ff4 = random.randint(900,1250)
+        fighterr4 = nivel4.create_image(ff4,1,image=carro30)
+
+    nivel4.after(10,fightercar8)
 def keyup4(e):
   global x,h
   print(e.keycode)
