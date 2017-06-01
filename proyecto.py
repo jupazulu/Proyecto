@@ -6,7 +6,7 @@ import random
 v = tkinter.Tk()
 
 
-v.title("HAPPY FIGHTER")
+v.title("CHAMPIONS ROAD")
 
 presiono = False
 carro1= None
@@ -24,24 +24,26 @@ t1 = 0
 t2 = 0
 t3 = 0
 t4 = 0
+t5 = 0
+t6 = 0
 count = 0
 count2 = 0
-count3 = 100
-count4 = 100
+count3 = 500
+count4 = 500
 count5 = 0
 count6 = 0
 count7 = 0
 count8 = 0
-count9 = 100
-count10 = 100
+count9 = 500
+count10 = 500
 count11 = 0
 count12 = 0
 count13 = 0
 count14 = 0
-count15 = 100
-count16 = 80
-count17 = 80
-count18 = 100
+count15 = 500
+count16 = 500
+count17 = 500
+count18 = 500
 sec3 = 0
 sec4 = 0
 sec5 = 0
@@ -104,6 +106,8 @@ def start():
     choque2(fighterr)
     choque3(runner)
     choque4(runner2)
+    choque5(gas)
+    choque6(gas2)
     #minivan1()
     fightercar()
     fightercar2()
@@ -124,16 +128,37 @@ M=0
 Z=0
 A=0
 B=0
+C=0
+D=0
+E=0
+F=0
+G=0
+H=0
+I=0
+J=0
+K=0
+L=0
+N=0
+O=0
+P=0
+Q=0
+R=0
+S=0
+T=0
+U=0
+V=0
+W=0
+
 def choque(enemigo):
     global nivel1,explosion,carro1,M,explosion1,count3,Z,count2,count5,explosion1
     if(nivel1.coords(carro1)[0]>=nivel1.coords(enemigo)[0] and nivel1.coords(carro1)[0]<=nivel1.coords(enemigo)[0]+50):
         if(nivel1.coords(carro1)[1]>=nivel1.coords(enemigo)[1] and nivel1.coords(carro1)[1]<=nivel1.coords(enemigo)[1]+50 ):
             if(M==0):
+                nivel1.after(400)
                 M=1
                 count3=count3-6
-                count2 = count2-400
-                count5 = 0
-                nivel1.after(1000)
+                count2 = count2-600
+                
                 
                 
     else:
@@ -145,16 +170,16 @@ def choque(enemigo):
     nivel1.after(10,choque,enemigo)
 
 def choque2(enemigo):
-    global nivel1,explosion,carrito,M,explosion1,count4,Z,count
+    global nivel1,explosion,carrito,M,explosion1,count4,Z,count,count6
     if(nivel1.coords(carrito)[0]>=nivel1.coords(enemigo)[0] and nivel1.coords(carrito)[0]<=nivel1.coords(enemigo)[0]+50):
         if(nivel1.coords(carrito)[1]>=nivel1.coords(enemigo)[1] and nivel1.coords(carrito)[1]<=nivel1.coords(enemigo)[1]+50 ):
             if(Z==0):
-                explosion1 = nivel1.create_image(nivel1.coords(carrito)[0],nivel1.coords(carrito)[1],image=explosion)
-                nivel1.delete(explosion1)
+                nivel1.after(400)
                 Z=1
+                count6=0
                 count4=count4-6
-                count = count-400
-                nivel1.after(1000)
+                count = count-600
+
     else:
         Z=0
             
@@ -166,43 +191,52 @@ def choque3(enemigo):
     if(nivel1.coords(carro1)[0]>=nivel1.coords(enemigo)[0] and nivel1.coords(carro1)[0]<=nivel1.coords(enemigo)[0]+50):
         if(nivel1.coords(carro1)[1]>=nivel1.coords(enemigo)[1] and nivel1.coords(carro1)[1]<=nivel1.coords(enemigo)[1]+50 ):
             if(A==0):
-                explosion1 = nivel1.create_image(nivel1.coords(carro1)[0],nivel1.coords(carro1)[1],image=explosion)
-                nivel1.delete(explosion1)
+                nivel1.after(400)
                 A=1
                 count3=count3-6
-                count2 = count2-400
-                count5 = 0
-                nivel1.after(1000)
+                count2 = count2-600
+                count5=0
     else:
         A=0
-            
-            
-  
     nivel1.after(10,choque3,enemigo)
 
 def choque4(enemigo):
-    global nivel1,explosion,carrito,A,explosion1,count4,B,count,count5
+    global nivel1,explosion,carrito,A,explosion1,count4,B,count,count6
     if(nivel1.coords(carrito)[0]>=nivel1.coords(enemigo)[0] and nivel1.coords(carrito)[0]<=nivel1.coords(enemigo)[0]+50):
         if(nivel1.coords(carrito)[1]>=nivel1.coords(enemigo)[1] and nivel1.coords(carrito)[1]<=nivel1.coords(enemigo)[1]+50 ):
             if(B==0):
-                explosion1 = nivel1.create_image(nivel1.coords(carrito)[0],nivel1.coords(carrito)[1],image=explosion)
-                nivel1.delete(explosion1)
+                nivel1.after(400)
                 B=1
                 count4=count4-6
-                count = count-400
-                nivel1.after(1000)
-
+                count = count-600
+                count6=0
     else:
         B=0
-
-            
-            
-  
     nivel1.after(10,choque4,enemigo)
+def choque5(enemigo):
+    global nivel1,explosion,carro1,B,explosion1,count3,C,count2,count5
+    if(nivel1.coords(carro1)[0]>=nivel1.coords(enemigo)[0] and nivel1.coords(carro1)[0]<=nivel1.coords(enemigo)[0]+50):
+        if(nivel1.coords(carro1)[1]>=nivel1.coords(enemigo)[1] and nivel1.coords(carro1)[1]<=nivel1.coords(enemigo)[1]+50 ):
+            if(C==0):
+                nivel1.after(400)
+                C=1
+                count3 = count3 + 12
+                count5=0
+    else:
+        C=0
+    nivel1.after(10,choque5,enemigo)
 
-
-            
-            
+def choque6(enemigo):
+    global nivel1,explosion,carrito,A,explosion1,count4,D,count,count5
+    if(nivel1.coords(carrito)[0]>=nivel1.coords(enemigo)[0] and nivel1.coords(carrito)[0]<=nivel1.coords(enemigo)[0]+50):
+        if(nivel1.coords(carrito)[1]>=nivel1.coords(enemigo)[1] and nivel1.coords(carrito)[1]<=nivel1.coords(enemigo)[1]+50 ):
+            if(D==0):
+                nivel1.after(400)
+                D=1
+                count4 = count4 + 12
+    else:
+        D=0
+    nivel1.after(10,choque6,enemigo)
 
 h=[]
 def keyup(e):
@@ -296,12 +330,10 @@ def movimiento2():
         nivel1.move(gas,0,velgas)
         nivel1.move(gas2,0,velgas)
     if(t2==2000):
-        nivel1.delete(gas)
-        nivel1.delete(gas2)
         tt = random.randint(270,600)
         tt1 = random.randint(900,1250)
-        gas = nivel1.create_image(tt,-800,image=gasolina)
-        gas2 = nivel1.create_image(tt1,-800,image=gasolina)
+        nivel1.move(gas,tt-nivel1.coords(gas)[0],-nivel1.coords(gas)[1])
+        nivel1.move(gas2,tt1-nivel1.coords(gas2)[0],-nivel1.coords(gas2)[1])
         t2 = 0
     nivel1.after(10,movimiento2)
 
@@ -369,7 +401,13 @@ def start2():
     carrito2=nivel2.create_image(1100,750,image=carro)
     gas3 = nivel2.create_image(450,-800,image=gasolina)
     gas4 = nivel2.create_image(1100,-800,image=gasolina)
-
+    
+    choque7(runner3)
+    choque8(runner4)
+    choque9(fighter2)
+    choque10(fighterr2)
+    choque11(gas3)
+    choque12(gas4)
     movimiento3()
     movimiento4()
     fightercar3()
@@ -385,6 +423,83 @@ def start2():
     movimientofondo2()
     nivel2.lower(mapa2)
 
+def choque7(enemigo):
+    global nivel2,explosion,carro2,E,explosion1,sec3,Z,count9,count5,explosion1
+    if(nivel2.coords(carro2)[0]>=nivel2.coords(enemigo)[0] and nivel2.coords(carro2)[0]<=nivel2.coords(enemigo)[0]+50):
+        if(nivel2.coords(carro2)[1]>=nivel2.coords(enemigo)[1] and nivel2.coords(carro2)[1]<=nivel2.coords(enemigo)[1]+50 ):
+            if(E==0):
+                nivel2.after(200)
+                E=1
+                count9=count9-6
+                sec3 = sec3-600           
+    else:
+        E=0
+    nivel2.after(10,choque7,enemigo)
+
+def choque8(enemigo):
+    global nivel2,explosion,carrito2,F,explosion1,count10,Z,sec4
+    if(nivel2.coords(carrito2)[0]>=nivel2.coords(enemigo)[0] and nivel2.coords(carrito2)[0]<=nivel2.coords(enemigo)[0]+50):
+        if(nivel2.coords(carrito2)[1]>=nivel2.coords(enemigo)[1] and nivel2.coords(carrito2)[1]<=nivel2.coords(enemigo)[1]+50 ):
+            if(F==0):
+                nivel2.after(200)
+                F=1
+                count10=count10-6
+                sec4 = sec4-600
+    else:
+        F=0
+    nivel2.after(10,choque8,enemigo)
+def choque9(enemigo):
+    global nivel2,explosion,carro2,G,explosion1,sec3,Z,count9,count5,explosion1
+    if(nivel2.coords(carro2)[0]>=nivel2.coords(enemigo)[0] and nivel2.coords(carro2)[0]<=nivel2.coords(enemigo)[0]+50):
+        if(nivel2.coords(carro2)[1]>=nivel2.coords(enemigo)[1] and nivel2.coords(carro2)[1]<=nivel2.coords(enemigo)[1]+50 ):
+            if(G==0):
+                nivel2.after(200)
+                G=1
+                count9=count9-6
+                sec3 = sec3-600           
+    else:
+        G=0
+    nivel2.after(10,choque9,enemigo)
+
+def choque10(enemigo):
+    global nivel2,explosion,carrito2,H,explosion1,count10,Z,sec4
+    if(nivel2.coords(carrito2)[0]>=nivel2.coords(enemigo)[0] and nivel2.coords(carrito2)[0]<=nivel2.coords(enemigo)[0]+50):
+        if(nivel2.coords(carrito2)[1]>=nivel2.coords(enemigo)[1] and nivel2.coords(carrito2)[1]<=nivel2.coords(enemigo)[1]+50 ):
+            if(H==0):
+                nivel2.after(200)
+                H=1
+                count10=count10-6
+                sec4 = sec4-600
+    else:
+        H=0
+    nivel2.after(10,choque10,enemigo)
+
+def choque11(enemigo):
+    global nivel2,explosion,carro2,I,explosion1,sec3,Z,count9,count5,explosion1
+    if(nivel2.coords(carro2)[0]>=nivel2.coords(enemigo)[0] and nivel2.coords(carro2)[0]<=nivel2.coords(enemigo)[0]+50):
+        if(nivel2.coords(carro2)[1]>=nivel2.coords(enemigo)[1] and nivel2.coords(carro2)[1]<=nivel2.coords(enemigo)[1]+50 ):
+            if(I==0):
+                nivel2.after(200)
+                I=1
+                count9 = count9 + 12       
+    else:
+        I=0
+    nivel2.after(10,choque11,enemigo)
+
+def choque12(enemigo):
+    global nivel2,explosion,carrito2,J,explosion1,count10,Z,sec4
+    if(nivel2.coords(carrito2)[0]>=nivel2.coords(enemigo)[0] and nivel2.coords(carrito2)[0]<=nivel2.coords(enemigo)[0]+50):
+        if(nivel2.coords(carrito2)[1]>=nivel2.coords(enemigo)[1] and nivel2.coords(carrito2)[1]<=nivel2.coords(enemigo)[1]+50 ):
+            if(J==0):
+                nivel2.after(200)
+                J=1
+                count10 = count10 + 12
+    else:
+        J=0
+    nivel2.after(10,choque12,enemigo)
+
+    
+
     
 def fightercar3():
     global lvl3,carro2,t,carro,posx1,posy1,posx2,posy2,start2,z,start,t1,runner2,velrun,fighter2,nivel2,vely
@@ -396,9 +511,8 @@ def fightercar3():
         if(nivel2.coords(fighter2)[0] == nivel2.coords(carro2)[0]):
             nivel2.move(fighter2,0,vely)
     if(nivel2.coords(fighter2)[1] > 1400):
-        nivel2.delete(fighter2)
         gg2 = random.randint(270,600)
-        fighter2 = nivel2.create_image(gg2,1,image=carro3)
+        nivel2.move(fighter2,gg2-nivel2.coords(fighter2)[0],-nivel2.coords(fighter2)[1])
 
     nivel2.after(10,fightercar3)
 def fightercar4():
@@ -411,9 +525,8 @@ def fightercar4():
         if(nivel2.coords(fighterr2)[0] == nivel2.coords(carrito2)[0]):
             nivel2.move(fighterr2,0,vely)
     if(nivel2.coords(fighterr2)[1] > 1400):
-        nivel2.delete(fighterr2)
         ff2 = random.randint(900,1250)
-        fighterr2 = nivel1.create_image(ff2,1,image=carro3)
+        nivel2.move(fighterr2,ff2-nivel2.coords(fighterr2)[0],-nivel2.coords(fighterr2)[1])
 
     nivel2.after(10,fightercar4)
 def movimiento3():
@@ -424,12 +537,11 @@ def movimiento3():
         nivel2.move(runner3,0,velrun)
         nivel2.move(runner4,0,velrun)
     if(t3==500):
-        nivel2.delete(runner3)
-        nivel2.delete(runner4)
         pp2 = random.randint(270,600)
         pp10 = random.randint(900,1250)
-        runner3 = nivel2.create_image(pp2,0,image=carro20)
-        runner4 = nivel2.create_image(pp10,0,image=carro20)
+        nivel2.move(runner3,pp2-nivel2.coords(runner3)[0],-nivel2.coords(runner3)[1])
+        nivel2.move(runner4,pp10-nivel2.coords(runner4)[0],-nivel2.coords(runner4)[1])
+
         t3 = 0
     nivel2.after(10,movimiento3)
 def movimiento4():
@@ -440,12 +552,10 @@ def movimiento4():
         nivel2.move(gas3,0,velgas)
         nivel2.move(gas4,0,velgas)
     if(t4==2000):
-        nivel2.delete(gas3)
-        nivel2.delete(gas4)
         tt2 = random.randint(270,600)
         tt10 = random.randint(900,1250)
-        gas3 = nivel2.create_image(tt2,-800,image=gasolina)
-        gas4 = nivel2.create_image(tt10,-800,image=gasolina)
+        nivel2.move(gas3,tt2-nivel2.coords(gas3)[0],-nivel2.coords(gas3)[1])
+        nivel2.move(gas4,tt10-nivel2.coords(gas4)[0],-nivel2.coords(gas4)[1])
         t4 = 0
     nivel2.after(10,movimiento4)
 
@@ -543,7 +653,7 @@ def movimientofondo3():
         nivel3.move(mapa3,0,-nivel3.coords(mapa3)[1])
             
 def start3():
-    global fondolvl3,i,j,carro,key3,nivel3,carro3,posx1,posy1,posx2,posy2,z,movimientofondo3,lvl4,carrito3,mapa3,player1,player2,fighter3,fighterr3,carro30
+    global fondolvl3,i,j,carro,key3,nivel3,carro3,posx1,posy1,posx2,posy2,z,movimientofondo3,lvl4,carrito3,mapa3,player1,player2,fighter3,fighterr3,carro30,runner5,runner6,gas5,gas6
     lvl4 = tkinter.Toplevel(v)
     v.iconify()
     nivel3= tkinter.Canvas(lvl4,bg="blue", width=1920, height=1000 )
@@ -565,9 +675,21 @@ def start3():
     carrito3 =nivel3.create_image(1100,750,image=carro)
     fighter3 = nivel3.create_image(380,0,image=carro30)
     fighterr3 = nivel3.create_image(980,0,image=carro30)
+    runner5 = nivel3.create_image(320,0,image=carro20)
+    runner6 = nivel3.create_image(990,0,image=carro20)
+    gas5 = nivel3.create_image(450,-800,image=gasolina)
+    gas6 = nivel3.create_image(1100,-800,image=gasolina)
+    choque13(runner5)
+    choque14(runner6)
+    choque15(fighter3)
+    choque16(fighterr3)
+    choque17(gas5)
+    choque18(gas6)
 
     fightercar6()
     fightercar5()
+    movimiento5()
+    movimiento6()
     gaso5()
     gaso6()
     puntos5()
@@ -581,7 +703,7 @@ def start3():
 
 vely2=4
 def fightercar5():
-    global lvl4,carro1,t,carro3,runner,posx1,posy1,posx2,posy2,start,z,start,t1,runner2,velrun,fighter3,nivel1,vely
+    global lvl4,carro1,t,carro3,runner,posx1,posy1,posx2,posy2,start,z,start,t1,runner2,velrun,fighter3,nivel1,vely2
     if(nivel3.coords(fighter3)[1] <=1400):
         if(nivel3.coords(fighter3)[0] < nivel3.coords(carro3)[0]):
             nivel3.move(fighter3,1,vely2)
@@ -596,7 +718,7 @@ def fightercar5():
 
     nivel3.after(10,fightercar5)
 def fightercar6():
-    global lvl4,carro1,t,carrito3,runner,posx1,posy1,posx2,posy2,start,z,start,t1,runner2,velrun,fighterr3,nivel1,vely
+    global lvl4,carro1,t,carrito3,runner,posx1,posy1,posx2,posy2,start,z,start,t1,runner2,velrun,fighterr3,nivel1,vely2
     if(nivel3.coords(fighterr3)[1] <=1400):
         if(nivel3.coords(fighterr3)[0] < nivel3.coords(carrito3)[0]):
             nivel3.move(fighterr3,1,vely2)
@@ -610,6 +732,118 @@ def fightercar6():
         fighterr3 = nivel3.create_image(ff3,1,image=carro30)
 
     nivel3.after(10,fightercar6)
+    
+velrun2=2
+def movimiento5():
+
+    global lvl3,carro20,t5,runner5,posx1,posy1,posx2,posy2,start,z,start,t6,runner6,velrun2
+    if(t5<500):
+        t5=t5+1
+        nivel3.move(runner5,0,velrun2)
+        nivel3.move(runner6,0,velrun2)
+    if(t5==500):
+        pp3 = random.randint(270,600)
+        pp11 = random.randint(900,1250)
+        nivel3.move(runner5,pp3-nivel3.coords(runner5)[0],-nivel3.coords(runner5)[1])
+        nivel3.move(runner6,pp11-nivel3.coords(runner6)[0],-nivel3.coords(runner6)[1])
+
+        t5 = 0
+    nivel3.after(10,movimiento5)
+def movimiento6():
+
+    global lvl3,carro1,t5,carro2,gas3,posx1,posy1,posx2,posy2,start,z,start,t6,gas4,velgas
+    if(t6<2000):
+        t6=t6+1
+        nivel3.move(gas5,0,velgas)
+        nivel3.move(gas6,0,velgas)
+    if(t6==2000):
+        tt3 = random.randint(270,600)
+        tt11 = random.randint(900,1250)
+        nivel3.move(gas5,tt3-nivel3.coords(gas5)[0],-nivel3.coords(gas5)[1])
+        nivel3.move(gas6,tt11-nivel3.coords(gas6)[0],-nivel3.coords(gas6)[1])
+        
+        t6 = 0
+    nivel3.after(10,movimiento6)
+    
+def choque13(enemigo):
+    global nivel3,explosion,carro3,K,explosion1,sec6,Z,count12,count5,explosion1,count16,count15
+    if(nivel3.coords(carro3)[0]>=nivel3.coords(enemigo)[0] and nivel3.coords(carro3)[0]<=nivel3.coords(enemigo)[0]+50):
+        if(nivel3.coords(carro3)[1]>=nivel3.coords(enemigo)[1] and nivel3.coords(carro3)[1]<=nivel3.coords(enemigo)[1]+50 ):
+            if(K==0):
+                nivel3.after(200)
+                K=1
+                count12=0
+                sec6 = sec6-600
+                count16=count16-6
+    else:
+        K=0
+    nivel3.after(10,choque13,enemigo)
+
+def choque14(enemigo):
+    global nivel3,explosion,carrito3,L,explosion1,count11,Z,sec5,count16,count15
+    if(nivel3.coords(carrito3)[0]>=nivel3.coords(enemigo)[0] and nivel3.coords(carrito3)[0]<=nivel3.coords(enemigo)[0]+50):
+        if(nivel3.coords(carrito3)[1]>=nivel3.coords(enemigo)[1] and nivel3.coords(carrito3)[1]<=nivel3.coords(enemigo)[1]+50 ):
+            if(L==0):
+                nivel3.after(200)
+                L=1
+                count11=0
+                count15=count15-6
+                sec5 = sec5-600 
+
+    else:
+        L=0
+    nivel3.after(10,choque14,enemigo)
+def choque15(enemigo):
+    global nivel3,explosion,carro3,N,explosion1,sec6,Z,count12,count5,explosion1,count16,count15
+    if(nivel3.coords(carro3)[0]>=nivel3.coords(enemigo)[0] and nivel3.coords(carro3)[0]<=nivel3.coords(enemigo)[0]+50):
+        if(nivel3.coords(carro3)[1]>=nivel3.coords(enemigo)[1] and nivel3.coords(carro3)[1]<=nivel3.coords(enemigo)[1]+50 ):
+            if(N==0):
+                nivel3.after(200)
+                N=1
+                count16=count16-6
+                count12=0
+                sec6 = sec6-600
+    else:
+        N=0
+    nivel3.after(10,choque15,enemigo)
+
+def choque16(enemigo):
+    global nivel3,explosion,carrito3,O,explosion1,count11,Z,sec5,count16,count15
+    if(nivel3.coords(carrito3)[0]>=nivel3.coords(enemigo)[0] and nivel3.coords(carrito3)[0]<=nivel3.coords(enemigo)[0]+50):
+        if(nivel3.coords(carrito3)[1]>=nivel3.coords(enemigo)[1] and nivel3.coords(carrito3)[1]<=nivel3.coords(enemigo)[1]+50 ):
+            if(O==0):
+                nivel3.after(200)
+                O=1
+                count15=count15-6
+                count11=0
+                sec5 = sec5-600
+    else:
+        O=0
+    nivel3.after(10,choque16,enemigo)
+
+def choque17(enemigo):
+    global nivel3,explosion,carro3,P,explosion1,sec5,Z,count9,count16,explosion1
+    if(nivel3.coords(carro3)[0]>=nivel3.coords(enemigo)[0] and nivel3.coords(carro3)[0]<=nivel3.coords(enemigo)[0]+50):
+        if(nivel3.coords(carro3)[1]>=nivel3.coords(enemigo)[1] and nivel3.coords(carro3)[1]<=nivel3.coords(enemigo)[1]+50 ):
+            if(P==0):
+                nivel3.after(200)
+                P=1
+                count16 = count16 + 12       
+    else:
+        P=0
+    nivel3.after(10,choque17,enemigo)
+
+def choque18(enemigo):
+    global nivel3,explosion,carrito3,Q,explosion1,count15,Z,sec4
+    if(nivel3.coords(carrito3)[0]>=nivel3.coords(enemigo)[0] and nivel3.coords(carrito3)[0]<=nivel3.coords(enemigo)[0]+50):
+        if(nivel3.coords(carrito3)[1]>=nivel3.coords(enemigo)[1] and nivel3.coords(carrito3)[1]<=nivel3.coords(enemigo)[1]+50 ):
+            if(Q==0):
+                nivel3.after(200)
+                Q=1
+                count15 = count15 + 12
+    else:
+        Q=0
+    nivel3.after(10,choque18,enemigo)
 
 
 def keyup3(e):
@@ -999,19 +1233,19 @@ def puntos2():
     count2=count2+points
     nivel1.after(1000,puntos2)
 def puntos3():
-    global sec3,points
+    global sec3,points,lvl3
     textGasolina3= tkinter.Label(lvl3,borderwidth=5,font=("Arial",23))
     textGasolina3.config(text= str(sec3))
     textGasolina3.place(x=1400,y=450)
     sec3+=points
     nivel2.after(1000,puntos3)
 def puntos4():
-    global sec4,points
+    global sec4,points,lvl3
     textGasolina4= tkinter.Label(lvl3,borderwidth=5,font=("Arial",23))
     textGasolina4.config(text= str(sec4))
     textGasolina4.place(x=20,y=450)
     sec4=sec4+points
-    nivel2.after(2000,puntos4)
+    nivel2.after(1000,puntos4)
 def puntos5():
     global sec5,points
     textGasolina5= tkinter.Label(lvl4,borderwidth=5,font=("Arial",23))
@@ -1126,6 +1360,14 @@ def velocidad8():
             textVelocidad8.place(x=1400,y=250)
             count14=count14+30
             nivel4.after(500,velocidad8)
+
+def start5():
+    global lvl6,nivel5
+    lvl6 = tkinter.Toplevel(v)
+    v.iconify()
+    nivel5= tkinter.Canvas(lvl6,bg="blue", width=600, height=200 )
+    nivel5.pack()
+    nombre111=tkinter.Label(nivel5,bg="white",fg="black",text="El nivel 5 todavia se encuentra en desarrollo por favor esperar un poco",borderwidth=5,font=("Arial",23))
         
             
 #widgets
@@ -1142,7 +1384,7 @@ bot3 = tkinter.Button(d,text="Nivel 3",bg="blue",fg="white",command=start3,curso
                       relief="raised", borderwidth=5,font=("Time new roman",26)).place(x=1100,y=400)
 bot4 = tkinter.Button(d,text="Nivel 4",bg="blue",fg="white",command=start4,cursor="hand2",
                       relief="raised", borderwidth=5,font=("Time new roman",26)).place(x=1100,y=550)
-bot5 = tkinter.Button(d,text="Nivel 5",bg="blue",fg="white",cursor="hand2",
+bot5 = tkinter.Button(d,text="Nivel 5",bg="blue",fg="white",command=start5,cursor="hand2",
                       relief="raised", borderwidth=5,font=("Time new roman",26)).place(x=1100,y=700)
 c = tkinter.Label(d,text="CHAMPIONS RACE",bg="black",fg="white",width=50,relief="raised", borderwidth=10,font=("Arial",36)).place(x=70,y=0)
 
